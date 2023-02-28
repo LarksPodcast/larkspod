@@ -1,8 +1,9 @@
 export default function Footer() {
+  const date = new Date();
+
   return (
     <footer>
-        <h4>Larks Podcast footer</h4>
-        <small>Built with love by Duowork</small>
+        <h4>Larks Podcast &copy;{date.getFullYear()}</h4>
     </footer>
   )
 }

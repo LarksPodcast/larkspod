@@ -8,6 +8,9 @@ const { parsed: localEnv } = require("dotenv").config({
 const nextConfig = {
   reactStrictMode: true,
   env: localEnv,
+  images: {
+    domains: ["d3t3ozftmdmh3i.cloudfront.net"]
+  }
 };
 
 module.exports = nextConfig;

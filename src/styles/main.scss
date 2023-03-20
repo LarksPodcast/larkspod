@@ -1,0 +1,21 @@
+// Saas CSS variables
+@import "./_variables";
+@import "./_home.scss";
+@import "./_episodes.scss";
+@import "./_contact.scss";
+@import "./_nav.scss";
+@import "./_footer";
+
+h1 {
+    color: red;
+}
+
+// Google material fonts style
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+// Tailwind rules
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,3 +1,9 @@
+/*
+  Fetching data is done on the Layout componet and pass via 
+  React.cloneElement module 'children' prop. The 'children' prop
+  render the pages to the Layout components. 
+*/
+
 import { Fragment, useEffect, useState, cloneElement } from "react";
 import { getPodcastSeries, graphQLRequest } from "@/graphQL/gql";
 import Head from "next/head";
@@ -66,7 +72,3 @@ export default function Layout({ children }: any) {
     </Fragment>
   );
 }
-
-/*
-  - Leave a commnet explaing why fetching data was done client-side
-*/

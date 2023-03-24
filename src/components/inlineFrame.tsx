@@ -1,6 +1,7 @@
 import React from "react";
 
 type RequiredPropsTypes = {
+  className?: string;
   url: string;
   name: string;
   title: string;
@@ -14,6 +15,7 @@ type RequiredPropsTypes = {
 };
 
 export default function InlineFrame({
+  className,
   url,
   name,
   title,
@@ -27,6 +29,7 @@ export default function InlineFrame({
   return (
     <div id="inline-frame">
       <iframe
+        className={className}
         src={url}
         name={name}
         title={title}

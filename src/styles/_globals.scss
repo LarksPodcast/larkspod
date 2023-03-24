@@ -1,0 +1,77 @@
+// Voice wave animation
+.voice-wave {
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  background: currentColor;
+  color: $primary-color;
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+
+.voice-wave::after, .voice-wave::before {
+  content: '';
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  box-sizing: border-box;
+  animation: animloader 0.3s  0.45s  linear infinite alternate;
+}
+.voice-wave::before {
+  left: -20px;
+  animation-delay: 0s;
+}
+
+@keyframes animloader {
+  0%   { height: 48px} 
+  100% { height: 4px}
+}
+
+// loader side-effect data
+.loader {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient($primary-color 50px, transparent 0),
+    linear-gradient($primary-color 50px, transparent 0),
+    linear-gradient($primary-color 50px, transparent 0),
+    linear-gradient($primary-color 50px, transparent 0),
+    linear-gradient($primary-color 50px, transparent 0),
+    linear-gradient($primary-color 50px, transparent 0);
+  background-size: 5px 40px;
+  background-position: 0px center, 10px center, 20px center, 30px center,
+    40px center, 50px center;
+  animation: spikeUp 1s linear infinite alternate;
+}
+@keyframes spikeUp {
+  0% {
+    background-size: 5px 40px;
+  }
+  16% {
+    background-size: 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px;
+  }
+  33% {
+    background-size: 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px, 5px 40px;
+  }
+  50% {
+    background-size: 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px, 5px 40px;
+  }
+  66% {
+    background-size: 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px, 5px 40px;
+  }
+  83% {
+    background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px, 5px 40px;
+  }
+  100% {
+    background-size: 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 40px, 5px 55px;
+  }
+}

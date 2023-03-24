@@ -1,0 +1,27 @@
+#larkspodcast-nav-container {
+    nav {
+        ul {
+            position: fixed;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, -50%);
+            z-index: 1 !important;
+
+            li {
+                a {
+                    padding: 0 0.5rem 0 0.5rem;
+                    border-radius: 0.375rem;
+
+                    &:visited {
+                        background-color: $primary-color;
+                    }
+
+                    &:hover, &:active {
+                        background-color: $primary-color;
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+    }
+}

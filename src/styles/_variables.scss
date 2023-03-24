@@ -1,4 +1,5 @@
-$larks-header-color: rgba(141, 37, 36, 0.8);
+// COLOR VARIABLES
+$larks-header-color: rgba(141, 37, 36, 0.9);
 $text-color: rgba(0, 0, 0, 0.8);
 $white: #ffffff;
 $primary-color: #FE982C;
@@ -10,3 +11,27 @@ $yellow-tail: 'Yellowtail', cursive;
 $knew-wave: 'Knewave', cursive;
 $shadow-into-light: 'Shadows Into Light', cursive;
 $poppins: 'Poppins', sans-serif;
+
+// TRANSITION AND ANIMATION
+$transition: 300ms ease-out ;
+
+/* INLINE COLOR CLASSES */
+// Text
+.custom-header-color {color: $larks-header-color};
+.custom-text-color-dark {color: $text-color}
+.custom-text-color-white {color: $white} // Not needed! Tailwind provide the white inline color class
+.custom-text-color-primary {color: $primary-color};
+.custom-text-color-secondary {color: $secondary-color}
+.custom-text-color-accent {color: $accent-color}
+// Background
+.custom-bg-color-primary {background-color: $primary-color};
+.custom-bg-color-secondary {background-color: $secondary-color}
+.custom-bg-color-accent {background-color: $accent-color}
+
+/* INLINE FONT CLASSES */
+.font-yellowTail {font-family: $yellow-tail;}
+.font-knewWave {font-family: $knew-wave;}
+.font-shadowIntoLight {font-family: $shadow-into-light;}
+.font-poppins {font-family: $poppins;}
+
+// border: 5px solid #FFFFFF

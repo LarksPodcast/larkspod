@@ -33,7 +33,7 @@ export default function Home({ podcastSeries }: any) {
         />
       </Head>
 
-      <main id="larkspodcast-home" className="h-[45rem] sm:h-full">
+      <main id="larkspodcast-home" className="h-auto sm:h-full">
         <section
           id="larkspodcast-banner"
           className="flex justify-center px-10 mb-40"
@@ -74,13 +74,13 @@ export default function Home({ podcastSeries }: any) {
                   className="episode flex flex-col lg:flex-row w-[300px] lg:w-[400px] lg:px-0"
                   key={episode.uuid}
                 >
-                  <div className="h-full podcast-image lg:w-[30%] lg:mr-5">
+                  <div className="h-full podcast-image lg:w-[30%] py-[15px] px-[5px] lg:mr-5">
                     <Image
                       src={episode.imageUrl}
                       alt={episode.name}
                       width={300}
                       height={300}
-                      className="!w-full h-[90%] lg:h-full"
+                      className="!w-full h-[90%] lg:h-full p-[0.375rem]"
                       priority
                     />
                   </div>
@@ -109,7 +109,7 @@ export default function Home({ podcastSeries }: any) {
 
         <section id="larkspodcast-platforms" className="h-auto">
           <div id="podcasts-platforms" className="w-full px-5 sm:px-10">
-            <h3 className="font-poppins font-medium text-[1.5rem] md:text-3xl custom-text-color-dark max-w-[35rem] mb-5 sm:mb-10">
+            <h3 className="font-poppins font-medium text-[1.5rem] md:text-3xl leading-tight sm:leading-relaxed custom-text-color-dark max-w-[35rem] mb-5 sm:mb-10">
               LARKS is available on all platforms.{" "}
               <span className="custom-text-color-primary">
                 Don't forget to subscribe!
@@ -122,7 +122,7 @@ export default function Home({ podcastSeries }: any) {
             >
               <div
                 id="podcasts-platform-listing"
-                className="flex items-around justify-center flex-wrap md:w-[300px] lg:w-[500px] md:h-[350px] lg:h-[200px] sm:mt-10"
+                className="flex items-around justify-center flex-wrap h-[400px] md:w-[300px] lg:w-[500px] md:h-[350px] lg:h-[200px] sm:mt-10"
               >
                 <div className="platform-listing rounded-full">
                   <Image src={applePodcast} alt="Apple podcast" />
@@ -174,7 +174,7 @@ export default function Home({ podcastSeries }: any) {
                 fullScreen={true}
               />
               <div id="subscribe-button" className="w-[18rem] h-[55px] text-center py-5 mt-7 rounded-full text-white">
-                <Link href="">Subscribe to the channel</Link>
+                <Link href="#" className="block h-full flex items-center justify-center">Subscribe to the channel</Link>
               </div>
             </div>
           </div>
@@ -198,15 +198,15 @@ export default function Home({ podcastSeries }: any) {
           />
         </section> */}
 
-        <section id="larkspodcast-newsletter" className="mt-5 pl-20 custom-bg-color-secondary w-auto h-[30rem] font-poppins">
-          <h3 className="custom-text-color-text-dark inline-block text-1xl sm:w-[30rem] text-[1.5rem] md:text-3xl font-medium pt-20 pb-5 sm:pb-10">
+        <section id="larkspodcast-newsletter" className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] font-poppins">
+          <h3 className="custom-text-color-text-dark inline-block text-1xl sm:w-[30rem] text-[1.5rem] md:text-3xl font-medium leading-tight sm:leading-loose pt-20 pb-5 sm:pb-10">
             You've listend to the podcast? <span className="text-white">Now read the newsletter!</span>
           </h3>
           <p className="mt-5 mb-10 font-regular">
             Subscribe today and get the latest episode delivered to your inbox
           </p>
 
-          <div id="newsletter-input-container" className="border-2 border-white">
+          <div id="newsletter-input-container" className="flex items-center border border-white rounded-md w-[100%] md:w-[80%] lg:w-[50%] h-auto">
             <label htmlFor="#newsletter-input" className="hidden"></label>
             <input
               type="text"
@@ -214,12 +214,13 @@ export default function Home({ podcastSeries }: any) {
               id="newsletter-input"
               placeholder="Enter your email"
               title="Larks podcast newsletter"
+              className="outline-0 border-0 rounded-l-md w-[70%] h-[40px] custom-bg-color-primary p-5"
             />
-            <input
+            <button
               type="button"
-              value="Sign up"
               title="Larks podcast newsletter sign up button"
-            />
+              className="bg-white w-[30%] h-[40px] font-semibold sm:font-bold border-r border-y border-orange-300 rounded-r"
+            >Sign Up</button>
           </div>
         </section>
       </main>

@@ -14,7 +14,7 @@ export default function Nav() {
       </div>
 
       <nav className="mb-10 p-5">
-        <ul className="flex justify-evenly text-white custom-bg-color-secondary w-[22rem] sm:w-[30rem] py-2 rounded-full">
+        <ul className="flex justify-evenly text-white custom-bg-color-secondary w-[22rem] sm:w-[30rem] py-2 rounded-full border-2 border-white">
           <li>
             <Link href="/" className="h-full block">
               <MaterialIcon iconName="home" className="text-5xl" />

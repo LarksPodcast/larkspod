@@ -20,6 +20,10 @@
                         background-color: $primary-color;
                         transition: $transition;
                     }
+
+                    span {
+                        font-size: 3rem !important;
+                    }
                 }
             }
         }

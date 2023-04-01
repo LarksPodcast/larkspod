@@ -1,37 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import MaterialIcon from "@/components/materialIcon";
 
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import SEO from "@/components/SEO";
+import NewsletterInput from "@/components/NewsletterInput";
 import InlineFrame from "@/components/inlineFrame";
+import PodcastEpisodes from "@/components/PodcastEpisodes";
 
 import ellipse from "../assets/images/larks-ellipse.svg";
-// import episodeBanner from "../assets/images/episode-banner.jpeg";
 import LarksOnApplePodcast from "../assets/images/larks-on-apple-podcast.png";
 import googlePodcast from "../assets/images/podcast-platforms/google-podcast.png";
 import amazon from "../assets/images/podcast-platforms/amazon.png";
 import applePodcast from "../assets/images/podcast-platforms/apple-podcast.png";
 import iHeartRadio from "../assets/images/podcast-platforms/iHeartRadio.png";
 import spotify from "../assets/images/podcast-platforms/spotify.png";
-import hostImage from "../assets/images/emmy.png";
 
 export default function Home({ podcastSeries }: any) {
-  // Get all episodes and extract 4 episodes
+  // Extract 4 episodes from all episodes
   const { episodes } = podcastSeries;
   const podcastEpisodes = episodes.slice(0, 4);
 
   return (
     <>
-      <Head>
-        <title>Larks Podcast | Home</title>
-        <meta
-          name="description"
-          content="LARKS is a podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels."
-        />
-      </Head>
+      <SEO title="Larks Podcast | Home" />
 
       <main id="larkspodcast-home" className="h-auto sm:h-full">
         <section
@@ -60,51 +53,11 @@ export default function Home({ podcastSeries }: any) {
         </section>
 
         <section id="larks-latest-episodes" className="px-10 mb-40">
-          <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[6rem] custom-text-color-dark">
+          <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[11rem] custom-text-color-dark">
             Latest episodes
           </h2>
 
-          <div
-            id="latest-episodes"
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center md:w-[620px] lg:w-[830px]"
-          >
-            {podcastEpisodes.map((episode: any) => {
-              return (
-                <div
-                  className="episode flex flex-col lg:flex-row w-[300px] lg:w-[400px] lg:px-0"
-                  key={episode.uuid}
-                >
-                  <div className="h-full podcast-image lg:w-[30%] py-[15px] px-[5px] lg:mr-5">
-                    <Image
-                      src={episode.imageUrl}
-                      alt={episode.name}
-                      width={300}
-                      height={300}
-                      className="!w-full h-[90%] lg:h-full p-[0.375rem]"
-                      priority
-                    />
-                  </div>
-
-                  <div className="h-full podcast-description lg:w-[70%] px-2">
-                    <small>17 February</small>
-                    <h3 className=" my-2">{episode.name}</h3>
-                    <p className="text-xs font-regular">
-                      {episode.description}
-                    </p>
-                    <div className="w-full flex justify-between mt-2 episode-listenTime-and-playBtn-container">
-                      <small>12 Mins</small>
-                      <div>
-                        <MaterialIcon
-                          iconName="play_arrow"
-                          className="self-center custom-bg-color-primary text-white mr-5 rounded-full episode-play-btn"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <PodcastEpisodes episodes={podcastEpisodes} />
         </section>
 
         <section id="larkspodcast-platforms" className="h-auto">
@@ -122,28 +75,28 @@ export default function Home({ podcastSeries }: any) {
             >
               <div
                 id="podcasts-platform-listing"
-                className="flex items-around justify-center flex-wrap h-[400px] md:w-[300px] lg:w-[500px] md:h-[350px] lg:h-[200px] sm:mt-10"
+                className="flex justify-center flex-wrap h-[400px] md:w-[300px] lg:w-[500px] md:h-[350px] lg:h-[200px] sm:mt-10"
               >
-                <div className="platform-listing rounded-full">
+                <Link href="#" className="platform-listing rounded-full">
                   <Image src={applePodcast} alt="Apple podcast" />
                   <span>Apple podcast</span>
-                </div>
-                <div className="platform-listing">
+                </Link>
+                <Link href="#" className="platform-listing">
                   <Image src={spotify} alt="Spotify" />
                   <span>Spotify</span>
-                </div>
-                <div className="platform-listing">
+                </Link>
+                <Link href="#" className="platform-listing">
                   <Image src={googlePodcast} alt="Google podcast" />
                   <span>Google podcast</span>
-                </div>
-                <div className="platform-listing">
+                </Link>
+                <Link href="" className="platform-listing">
                   <Image src={iHeartRadio} alt="iHeartRadio" />
                   <span>iheartRadio</span>
-                </div>
-                <div className="platform-listing">
+                </Link>
+                <Link href="#" className="platform-listing">
                   <Image src={amazon} alt="Amazon music" />
                   <span>Amazon Music</span>
-                </div>
+                </Link>
               </div>
               <div id="larks-on-apple-platform" className="hidden sm:block">
                 <Image
@@ -161,7 +114,9 @@ export default function Home({ podcastSeries }: any) {
             className="w-full custom-bg-color-secondary h-[45rem] font-poppins"
           >
             <div className="flex flex-col justify-center items-center h-full">
-              <h3 className="text-xl sm:text-2xl font-medium text-white py-5">Catch the visuals on YouTube</h3>
+              <h3 className="text-xl sm:text-2xl font-medium text-white py-5">
+                Catch the visuals on YouTube
+              </h3>
               <InlineFrame
                 className="rounded-lg"
                 url="https://www.youtube.com/embed/80TbyibmshY"
@@ -173,8 +128,16 @@ export default function Home({ podcastSeries }: any) {
                 sandbox="allow-scripts allow-same-origin"
                 fullScreen={true}
               />
-              <div id="subscribe-button" className="w-[18rem] h-[55px] text-center py-5 mt-7 rounded-full text-white">
-                <Link href="#" className="block h-full flex items-center justify-center">Subscribe to the channel</Link>
+              <div
+                id="subscribe-button"
+                className="w-[18rem] h-[55px] text-center py-5 mt-7 rounded-full text-white"
+              >
+                <Link
+                  href="#"
+                  className="block h-full flex items-center justify-center"
+                >
+                  Subscribe to the channel
+                </Link>
               </div>
             </div>
           </div>
@@ -198,29 +161,21 @@ export default function Home({ podcastSeries }: any) {
           />
         </section> */}
 
-        <section id="larkspodcast-newsletter" className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] font-poppins">
+        <section
+          id="larkspodcast-newsletter"
+          className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] font-poppins"
+        >
           <h3 className="custom-text-color-text-dark inline-block text-1xl sm:w-[30rem] text-[1.5rem] md:text-3xl font-medium leading-tight sm:leading-loose pt-20 pb-5 sm:pb-10">
-            You've listend to the podcast? <span className="text-white">Now read the newsletter!</span>
+            You've listend to the podcast?{" "}
+            <span className="text-white">Now read the newsletter!</span>
           </h3>
           <p className="mt-5 mb-10 font-regular">
             Subscribe today and get the latest episode delivered to your inbox
           </p>
 
-          <div id="newsletter-input-container" className="flex items-center border border-white rounded-md w-[100%] md:w-[80%] lg:w-[50%] h-auto">
-            <label htmlFor="#newsletter-input" className="hidden"></label>
-            <input
-              type="text"
-              name=""
-              id="newsletter-input"
-              placeholder="Enter your email"
-              title="Larks podcast newsletter"
-              className="outline-0 border-0 rounded-l-md w-[70%] h-[40px] custom-bg-color-primary p-5"
-            />
-            <button
-              type="button"
-              title="Larks podcast newsletter sign up button"
-              className="bg-white w-[30%] h-[40px] font-semibold sm:font-bold border-r border-y border-orange-300 rounded-r"
-            >Sign Up</button>
+          {/* Newsletter input */}
+          <div className="md:w-[80%] lg:w-[50%]">
+            <NewsletterInput />
           </div>
         </section>
       </main>

@@ -1,0 +1,23 @@
+footer {
+  .socials-contact {
+    .social-contact-link {
+      display: block;
+      background-color: $primary-color;
+      text-align: center;
+      padding: 10px;
+      border-radius: 50%;
+
+      @media screen and (max-width: 480px ){
+        img {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

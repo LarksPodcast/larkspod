@@ -1,0 +1,13 @@
+#larkspodcast-episodes {
+    #episode-search {
+        input[type='text'] {
+            background-image: url("/search-glass.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+    }
+}

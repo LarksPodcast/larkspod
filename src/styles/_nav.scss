@@ -1,11 +1,12 @@
 #larkspodcast-nav-container {
     nav {
+        // display: none;
         ul {
             position: fixed;
             left: 50%;
-            bottom: 10%;
+            bottom: 0%;
             transform: translate(-50%, -50%);
-            z-index: 1 !important;
+            z-index: 2 !important;
 
             li {
                 a {

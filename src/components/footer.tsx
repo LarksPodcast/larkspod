@@ -12,7 +12,7 @@ export default function Footer() {
   const Year = date.getFullYear();
 
   return (
-    <footer className="custom-bg-color-accent pt-10 sm:pt-20 pb-5 px-4 sm:px-10 font-poppins">
+    <footer className="custom-bg-color-accent pt-10 sm:pt-20 pb-5 px-4 sm:px-10 font-poppins h-[370px]">
         <div className="footer-details-container flex flex-col sm:flex-row justify-around items-start mb-10 sm:mb-20">
           <div className="footer-dates&socials text-white w-full sm:w-[300px] max-w-[300px]">
             <h3 className="text-2xl font-medium py-5">LARKS - &copy;{Year}</h3>

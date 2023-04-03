@@ -10,7 +10,9 @@ export default function Nav() {
   return (
     <div id="larkspodcast-nav-container">
       <div id="logo-container" className="w-full py-5 px-5">
-        <Image src={larkspodcastLogo} alt="Larks podcast logo" />
+        <Link href="/">
+          <Image src={larkspodcastLogo} alt="Larks podcast logo" />
+        </Link>
       </div>
 
       <nav className="mb-10 p-5">

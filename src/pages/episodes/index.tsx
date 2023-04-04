@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PodcastEpisodes from "@/components/PodcastEpisodes";
-import EpisodeDescriptionModal from "@/components/EpisodeDescriptionModal";
 
 type dataType = {
   data: any;

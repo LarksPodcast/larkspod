@@ -29,25 +29,25 @@ export default function Home({ podcastSeries }: any) {
       <main id="larkspodcast-home" className="h-auto sm:h-full">
         <section
           id="larkspodcast-banner"
-          className="flex justify-center px-10 mb-40"
+          className="flex flex-col sm:flex-row justify-center px-5 sm:px-10 mb-40 sm:mb-40"
         >
           <div>
             <h1
               id="intro-header"
-              className="text-5xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
+              className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
             >
               LARKS
             </h1>
             <h2
               id="sub-header"
-              className="font-knewWave custom-text-color-dark text-4xl mt-2"
+              className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
             >
               THE PODCAST
             </h2>
           </div>
           <div id="larks-ellipse" className="flex flex-col items-center">
             <Image src={ellipse} alt="An ellipse" />
-            <h3 className="font-yellowTail text-5xl">With Emmy.</h3>
+            <h3 className="font-yellowTail text-3xl sm:text-5xl">With Emmy.</h3>
           </div>
           <h1 className="hidden">Larks the podcast with Emmy</h1>
         </section>
@@ -77,26 +77,51 @@ export default function Home({ podcastSeries }: any) {
                 id="podcasts-platform-listing"
                 className="flex justify-center flex-wrap h-[400px] md:w-[300px] lg:w-[500px] md:h-[350px] lg:h-[200px] sm:mt-10"
               >
-                <Link href="#" className="platform-listing rounded-full">
+                <a
+                  href="https://podcasts.apple.com/ng/podcast/larks/id1575332695"
+                  className="platform-listing rounded-full"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Image src={applePodcast} alt="Apple podcast" />
                   <span>Apple podcast</span>
-                </Link>
-                <Link href="#" className="platform-listing">
+                </a>
+                <a
+                  href="https://open.spotify.com/show/7yw8qWWpcVkRhSuFhOHP72"
+                  className="platform-listing"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Image src={spotify} alt="Spotify" />
                   <span>Spotify</span>
-                </Link>
-                <Link href="#" className="platform-listing">
+                </a>
+                <a
+                  href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zN2QzMzllOC9wb2RjYXN0L3Jzcw=="
+                  className="platform-listing"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Image src={googlePodcast} alt="Google podcast" />
                   <span>Google podcast</span>
-                </Link>
-                <Link href="" className="platform-listing">
+                </a>
+                <a
+                  href="https://www.iheart.com/podcast/269-larks-106422385/"
+                  className="platform-listing"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Image src={iHeartRadio} alt="iHeartRadio" />
                   <span>iheartRadio</span>
-                </Link>
-                <Link href="#" className="platform-listing">
+                </a>
+                <a
+                  href="https://music.amazon.co.uk/podcasts/1f6a6356-d29b-4dbb-918b-58743e00ccfb/larks"
+                  className="platform-listing"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Image src={amazon} alt="Amazon music" />
                   <span>Amazon Music</span>
-                </Link>
+                </a>
               </div>
               <div id="larks-on-apple-platform" className="hidden sm:block">
                 <Image
@@ -132,12 +157,14 @@ export default function Home({ podcastSeries }: any) {
                 id="subscribe-button"
                 className="w-[18rem] h-[55px] text-center py-5 mt-7 rounded-full text-white"
               >
-                <Link
-                  href="#"
+                <a
+                  href="https://www.youtube.com/@larkspodcast"
                   className="block h-full flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener"
                 >
                   Subscribe to the channel
-                </Link>
+                </a>
               </div>
             </div>
           </div>

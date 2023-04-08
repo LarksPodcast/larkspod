@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import NewsletterInput from "@/components/NewsletterInput";
 import InlineFrame from "@/components/inlineFrame";
 import PodcastEpisodes from "@/components/PodcastEpisodes";
+import Nav from "@/components/nav";
 
 import ellipse from "../assets/images/larks-ellipse.svg";
 import LarksOnApplePodcast from "../assets/images/larks-on-apple-podcast.png";
@@ -27,32 +28,40 @@ export default function Home({ podcastSeries }: any) {
       <SEO title="Larks Podcast | Home" />
 
       <main id="larkspodcast-home" className="h-auto sm:h-full">
-        <section
-          id="larkspodcast-banner"
-          className="flex flex-col sm:flex-row justify-center px-5 sm:px-10 mb-40 sm:mb-40"
-        >
-          <div>
-            <h1
-              id="intro-header"
-              className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
-            >
-              LARKS
-            </h1>
-            <h2
-              id="sub-header"
-              className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
-            >
-              THE PODCAST
-            </h2>
+        <section id="larkspodcast-banner" className="h-screen">
+          <div id="larks-banner-top-stack">
+          <Nav />
+          <div className="flex flex-col sm:flex-row justify-center h-full px-5">
+            <div>
+              <h1
+                id="intro-header"
+                className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
+              >
+                LARKS
+              </h1>
+              <h2
+                id="sub-header"
+                className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
+              >
+                THE PODCAST
+              </h2>
+            </div>
+            <div id="larks-ellipse" className="flex flex-col items-center">
+              <Image src={ellipse} alt="An ellipse" />
+              <h3 className="font-yellowTail text-3xl sm:text-5xl">
+                With Emmy.
+              </h3>
+            </div>
+            <h1 className="hidden">Larks the podcast with Emmy</h1>
           </div>
-          <div id="larks-ellipse" className="flex flex-col items-center">
-            <Image src={ellipse} alt="An ellipse" />
-            <h3 className="font-yellowTail text-3xl sm:text-5xl">With Emmy.</h3>
           </div>
-          <h1 className="hidden">Larks the podcast with Emmy</h1>
+          <div id="overlay"></div>
         </section>
 
-        <section id="larks-latest-episodes" className="px-5 sm:px-10 mb-40">
+        <section
+          id="larks-latest-episodes"
+          className="px-5 sm:px-10 mb-40 pt-5"
+        >
           <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[11rem] custom-text-color-dark">
             Latest episodes
           </h2>
@@ -73,7 +82,10 @@ export default function Home({ podcastSeries }: any) {
               id="podcasts-platforms-split"
               className="flex flex-row justify-center h-auto"
             >
-              <div id="podcasts-platform-listing" className="flex justify-center items-center sm:w-1/2">
+              <div
+                id="podcasts-platform-listing"
+                className="flex justify-center items-center sm:w-1/2"
+              >
                 <div className="flex justify-start lg:justify-end flex-wrap lg:mt-[-7rem]">
                   <a
                     href="https://podcasts.apple.com/ng/podcast/larks/id1575332695"
@@ -131,7 +143,10 @@ export default function Home({ podcastSeries }: any) {
                   </a>
                 </div>
               </div>
-              <div id="larks-on-apple-platform" className="hidden sm:block w-1/2">
+              <div
+                id="larks-on-apple-platform"
+                className="hidden sm:block w-1/2"
+              >
                 <Image
                   src={LarksOnApplePodcast}
                   alt="Larks on Apple podcast"

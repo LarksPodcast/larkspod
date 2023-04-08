@@ -60,7 +60,7 @@ export default function Home({ podcastSeries }: any) {
 
         <section
           id="larks-latest-episodes"
-          className="px-5 sm:px-10 mb-40 pt-5"
+          className="px-5 sm:px-10 mb-40 mt-10 sm:mt-20"
         >
           <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[11rem] custom-text-color-dark">
             Latest episodes

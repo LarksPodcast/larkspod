@@ -6,6 +6,7 @@
 */
 
 import { Fragment, useEffect, useState, cloneElement } from "react";
+import { useRouter } from "next/router";
 import { getPodcastSeries, graphQLRequest } from "@/graphQL/gql";
 import SEO from "./SEO";
 import Loader from "./loader";
@@ -15,6 +16,7 @@ import Footer from "./footer";
 export default function Layout({ children }: any) {
   const [podcastSeries, setPodcastSeries] = useState();
   const [error, setError] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const componentIsMounted = true;
@@ -53,13 +55,13 @@ export default function Layout({ children }: any) {
   return (
     <Fragment>
       <SEO title="Larks Podcast" description="LARKS is a podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels." />
-      <Nav />
+     {router.pathname === "/"?null: <Nav />}
       {podcastSeries !== undefined
         ? cloneElement(children, {
             podcastSeries: podcastSeries,
           })
         : children}
-      <Footer />
+      {router.pathname === "/404" ? null : <Footer />}
     </Fragment>
   );
 }

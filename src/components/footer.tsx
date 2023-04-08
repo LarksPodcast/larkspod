@@ -18,16 +18,16 @@ export default function Footer() {
             <h3 className="text-2xl font-medium py-5">LARKS - &copy;{Year}</h3>
             <div className="socials-contact w-[75%]">
               <div className="w-full flex justify-between">
-                <Link href="dfdggfg" className="social-contact-link">
+                <Link href="http://instagram.com/larkspod" className="social-contact-link" target="_blank">
                   <Image src={Instagram} alt="Instagram contact" title="Check our feed and send us a DM" />
                 </Link>
-                <Link href="dgfgdfgd" className="social-contact-link">
+                <Link href="https://twitter.com/larkspod" className="social-contact-link" target="_blank">
                   <Image src={Twitter} alt="Twitter contact" className="w-full" title="Tweet at us" />
                   </Link>
-                <Link href="fdfdf" className="social-contact-link" title="Watch, like and subscribe">
+                <Link href="https://youtube.com/@larkspodcast" className="social-contact-link" title="Watch, like and subscribe" target="_blank">
                   <Image src={Youtube} alt="YouTube contact" className="w-full" />
                 </Link>
-                <Link href="fdfdf" className="social-contact-link" title="Send us an email">
+                <Link href="mailto:larkspodcast@gmail.com" className="social-contact-link" title="Send us an email" target="_blank">
                   <Image src={Email} alt="Email contact" className="" />
                 </Link>
               </div>

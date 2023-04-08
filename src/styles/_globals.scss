@@ -17,12 +17,11 @@
   .episode {
     font-family: $poppins;
     border-radius: 0.375rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
-      0 1px 2px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
-    .podcast-image {
-      height: 100%;
-    }
+    // .podcast-image {
+    //   height: 100%;
+    // }
 
     .podcast-description {
       // display: none;
@@ -60,7 +59,7 @@
       transition: $transition;
     }
   }
-} 
+}
 
 /* Voice wave loader for Audio player */
 .voice-wave {
@@ -103,7 +102,6 @@
     height: 4px;
   }
 }
-
 
 /* Loader for side-effect data */
 .loader {

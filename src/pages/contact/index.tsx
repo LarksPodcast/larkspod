@@ -13,28 +13,32 @@ export default function Contact() {
         </p>
         <div className="flex justify-center md:justify-start lg:justify-evenly flex-wrap w-[350px] sm:w-[500px]">
           <Link
-            href="#"
+            href="https://twitter.com/larkspod"
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2"
+            target="_blank"
           >
             Twitter
           </Link>
           <Link
-            href="#"
+            href="https://youtube.com/@larkspodcast"
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2 mx-2 lg:mx-0"
+            target="_blank"
           >
             YouTube
           </Link>
           <Link
-            href="#"
+            href="http://instagram.com/larkspod"
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2"
+            target="_blank"
           >
             Instagram
           </Link>
           <Link
-            href="#"
+            href="larkspodcast@gmail.com"
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2"
+            target="_blank"
           >
-            contact@larkspodcast.com
+            larkspodcast@gmail.com
           </Link>
         </div>
       </section>

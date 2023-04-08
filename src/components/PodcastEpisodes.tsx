@@ -9,9 +9,6 @@ export default function PodcastEpisodes({ episodes }: { episodes: any[] }) {
     showMdal: false,
   });
 
-  // Check if class to show modal exists.
-  // Create func and pass as props to child component. Child component will pass DOM as argument.
-
   const handleModalVisibility = (modalIsClosed: boolean) => {
     if (!modalIsClosed) {
       setEpisodeState((state) => ({
@@ -22,28 +19,39 @@ export default function PodcastEpisodes({ episodes }: { episodes: any[] }) {
     }
   };
 
+  const formateDate = (epochTimeStamp: number) => {
+    const date  = new Date(epochTimeStamp * 1000);
+    
+    return date.toLocaleString(undefined, {month: "long", day: "numeric"});
+  }
+
+  const playPodcast = (podcastURL: string) => {
+    console.log(podcastURL);
+  }
+
   return (
-    <div className="all-episodes grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center md:w-[620px] lg:w-[830px]">
+    <div className="all-episodes grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center lg:w-[830px]">
       {episodes.map((episode: any, idx: number) => {
+
         return (
           <>
             <div
-              className="episode flex flex-col lg:flex-row w-[300px] lg:w-[400px] lg:px-0"
+              className="episode flex flex-row w-full h-auto lg:px-0"
               key={idx}
             >
-              <div className="h-full podcast-image lg:w-[30%] py-[15px] px-[5px] lg:mr-5">
+              <div className="podcast-image h-[80%] w-[30%] py-2 px-2 lg:mr-5 self-center">
                 <Image
                   src={episode.imageUrl}
                   alt={episode.name}
-                  width={300}
-                  height={300}
-                  className="!w-full h-[90%] lg:h-full p-[0.375rem]"
+                  width={200}
+                  height={200}
+                  className="w-full h-full rounded"
                   priority
                 />
               </div>
 
-              <div className="h-full podcast-description lg:w-[70%] px-2">
-                <small>17 February</small>
+              <div className="h-full podcast-description w-[70%] px-2">
+                <small>{formateDate(episode.datePublished)}</small>
                 <h3
                   className="my-2"
                   onClick={() => {
@@ -59,7 +67,7 @@ export default function PodcastEpisodes({ episodes }: { episodes: any[] }) {
                 <p className="text-xs font-regular">{episode.description}</p>
                 <div className="w-full flex justify-between mt-2 episode-listenTime-and-playBtn-container">
                   <small>12 Mins</small>
-                  <div>
+                  <div onClick={() => playPodcast(episode.audioUrl)}>
                     <MaterialIcon
                       iconName="play_arrow"
                       className="self-center custom-bg-color-primary text-white mr-5 rounded-full episode-play-btn"

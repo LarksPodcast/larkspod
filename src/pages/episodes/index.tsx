@@ -19,8 +19,6 @@ export default function Episodes({ podcastSeries }: dataType) {
       const episodeName = episode.name.toLowerCase().replace(/[^\w\s]/g, "");
       const inputValue = e.target.value.toLowerCase();
 
-      console.log(episodeName);
-
       return episodeName.includes(inputValue);
     });
 

@@ -1,12 +1,7 @@
-import React, { MutableRefObject } from "react";
+import React, { memo } from "react";
 import Link from "next/link";
 
-export const descriptionText: string = `
-Recorded: December 30, 2022) A somewhat playful/goofy but serious episode filled with an abundance of chemistry aimed at raising awareness for an issue which is arguably under-discussed.\nFollow Nanya:\nwww.instagram.com/nanyahashim/\nCheck out Nanya’s Podcast:\nhttp://li.sten.to/imhwn\nFollow officialemmydrake:\nwww.instagram.com/officialemmydrake/ \nwww.twitter.com/EmaazDr \nMake sure you rate, share and leave a comment wherever you listen to the podcast www.telling.com me how much you enjoyed the episode! Better Ratings mean even more people find out about the podcast!
-Don't forget to use the hashtag\n#larkspodcast\nThis episode is sponsored by Monarch @oflmonarch on Instagram
-`;
-
-export default function EpisodeDescriptionModal({
+export default memo(function EpisodeDescriptionModal({
   description,
   showModal,
   handleVisibilty,
@@ -67,7 +62,7 @@ export default function EpisodeDescriptionModal({
               const matchedLink = DetailLine.match(linkRegex);
 
                 return (
-                  <>
+                  <div key={lineIdx}>
                     <p key={lineIdx} className="font-poppins font-light">
                       {!matchedLink?DetailLine:""}
                       <Link
@@ -79,7 +74,7 @@ export default function EpisodeDescriptionModal({
                       </Link>
                     </p>
                     <br />
-                  </>
+                  </div>
                 );
 
             })}
@@ -88,7 +83,7 @@ export default function EpisodeDescriptionModal({
       </div>
     </>
   );
-}
+})
 
 /*
     ISSUES

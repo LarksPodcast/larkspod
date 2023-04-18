@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
-
 import Image from "next/image";
+import Link from "next/link";
 
 import SEO from "@/components/SEO";
-import NewsletterInput from "@/components/NewsletterInput";
+// import NewsletterInput from "@/components/NewsletterInput";
 import InlineFrame from "@/components/inlineFrame";
 import PodcastEpisodes from "@/components/PodcastEpisodes";
 import Nav from "@/components/nav";
@@ -28,32 +27,35 @@ export default function Home({ podcastSeries }: any) {
       <SEO title="Larks Podcast | Home" />
 
       <main id="larkspodcast-home" className="h-auto sm:h-full">
-        <section id="larkspodcast-banner" className="h-screen">
+        <section
+          id="larkspodcast-banner"
+          className="h-[30rem] md:h-[40rem] lg:h-screen"
+        >
           <div id="larks-banner-top-stack">
-          <Nav />
-          <div className="flex flex-col sm:flex-row justify-center h-full px-5">
-            <div>
-              <h1
-                id="intro-header"
-                className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
-              >
-                LARKS
-              </h1>
-              <h2
-                id="sub-header"
-                className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
-              >
-                THE PODCAST
-              </h2>
+            <Nav />
+            <div className="flex flex-col sm:flex-row justify-center h-full px-5">
+              <div>
+                <h1
+                  id="intro-header"
+                  className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
+                >
+                  LARKS
+                </h1>
+                <h2
+                  id="sub-header"
+                  className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
+                >
+                  THE PODCAST
+                </h2>
+              </div>
+              <div id="larks-ellipse" className="flex flex-col items-center">
+                <Image src={ellipse} alt="An ellipse" />
+                <h3 className="font-yellowTail text-3xl sm:text-5xl">
+                  With Emmy.
+                </h3>
+              </div>
+              <h1 className="hidden">Larks the podcast with Emmy</h1>
             </div>
-            <div id="larks-ellipse" className="flex flex-col items-center">
-              <Image src={ellipse} alt="An ellipse" />
-              <h3 className="font-yellowTail text-3xl sm:text-5xl">
-                With Emmy.
-              </h3>
-            </div>
-            <h1 className="hidden">Larks the podcast with Emmy</h1>
-          </div>
           </div>
           <div id="overlay"></div>
         </section>
@@ -157,7 +159,7 @@ export default function Home({ podcastSeries }: any) {
             </div>
           </div>
 
-          <section
+          {/* <section
             id="larkspodcast-newsletter"
             className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] font-poppins"
           >
@@ -169,11 +171,10 @@ export default function Home({ podcastSeries }: any) {
               Subscribe today and get the latest episode delivered to your inbox
             </p>
 
-            {/* Newsletter input */}
             <div className="md:w-[80%] lg:w-[50%]">
               <NewsletterInput />
             </div>
-          </section>
+          </section> */}
         </section>
 
         {/* <section id="larkspodcast-meet-host">
@@ -226,6 +227,12 @@ export default function Home({ podcastSeries }: any) {
                 Subscribe to the channel
               </a>
             </div>
+            <p className="text-xs mt-10 mb-2 text-white">
+              Production by {" "}
+              <Link href="https://mswitchmediaglobal.com" className="black h-full font-semibold underline" target="_blank">
+                MSwitchMedia
+              </Link>
+            </p>
           </div>
         </div>
       </main>

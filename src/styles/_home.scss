@@ -1,7 +1,8 @@
 #larkspodcast-home {
   #larkspodcast-banner {
     position: relative;
-    background-image: url("/banner.jpg");
+    background-color: white;
+    // background-image: url("/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -55,7 +56,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba($primary-color, 0.4);
+      // background-color: rgba($primary-color, 0.4);
     }
   }
 

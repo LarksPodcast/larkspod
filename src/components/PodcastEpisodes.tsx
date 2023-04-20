@@ -56,14 +56,14 @@ export default memo(function PodcastEpisodes({ episodes }: { episodes: any[] }) 
   };
 
   return (
-    <div className="all-episodes grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center lg:w-[830px]">
+    <div className="all-episodes grid grid-cols-1 gap-4 justify-items-center lg:w-[650px]">
       {episodes.map((episode: any, idx: number) => {
         // Pass episode audio URL to audio player
         const player = audioPlayer(episode.audioUrl);
 
         return (
           <div key={episode.uuid}>
-            <div className="episode h-auto lg:px-0">
+            <div className="episode h-auto lg:px-0 !shadow-md ">
               <div className="flex flex-row w-full pb-2">
                 <div className="podcast-image h-[80%] w-[30%] py-2 px-2 lg:mr-5 self-center">
                   <Image

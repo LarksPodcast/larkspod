@@ -20,7 +20,7 @@ import rss from "../assets/images/podcast-platforms/rss.png";
 export default function Home({ podcastSeries }: any) {
   // Extract 4 episodes from all episodes
   const { episodes } = podcastSeries;
-  const podcastEpisodes = episodes.slice(0, 4);
+  const podcastEpisodes = episodes.slice(0, 1);
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function Home({ podcastSeries }: any) {
       <main id="larkspodcast-home" className="h-auto sm:h-full">
         <section
           id="larkspodcast-banner"
-          className="h-[30rem] md:h-[40rem] lg:h-screen"
+          className="h-[30rem] md:h-[35rem] lg:[40rem]"
         >
           <div id="larks-banner-top-stack">
             <Nav />
@@ -62,10 +62,10 @@ export default function Home({ podcastSeries }: any) {
 
         <section
           id="larks-latest-episodes"
-          className="px-5 sm:px-10 mb-40 mt-10 sm:mt-20"
+          className="px-5 sm:px-10 mb-20 mt-10 sm:mt-20"
         >
-          <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[11rem] custom-text-color-dark">
-            Latest episodes
+          <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[20rem] custom-text-color-dark">
+            Latest episode
           </h2>
 
           <PodcastEpisodes episodes={podcastEpisodes} />
@@ -135,7 +135,7 @@ export default function Home({ podcastSeries }: any) {
                     <span>Amazon Music</span>
                   </a>
                   <a
-                    href="https://music.amazon.co.uk/podcasts/1f6a6356-d29b-4dbb-918b-58743e00ccfb/larks"
+                    href="https://anchor.fm/s/37d339e8/podcast/rss"
                     className="platform-listing"
                     target="_blank"
                     rel="noopener"
@@ -228,8 +228,12 @@ export default function Home({ podcastSeries }: any) {
               </a>
             </div>
             <p className="text-xs mt-10 mb-2 text-white">
-              Production by {" "}
-              <Link href="https://mswitchmediaglobal.com" className="black h-full font-semibold underline" target="_blank">
+              Production by{" "}
+              <Link
+                href="https://mswitchglobal.com"
+                className="black h-full font-semibold underline"
+                target="_blank"
+              >
                 MSwitchMedia
               </Link>
             </p>

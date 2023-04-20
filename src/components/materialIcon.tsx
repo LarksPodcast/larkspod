@@ -12,7 +12,7 @@ export default function MaterialIcon({
   onClick,
 }: IconPropType) {
   return (
-    <div>
+    <div className="inline-block">
       <span
         className={`material-symbols-rounded block ${className ? className : ""}`}
         onClick={onClick ? onClick : undefined}

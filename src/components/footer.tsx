@@ -66,7 +66,7 @@ export default function Footer() {
           </h4>
           <p className="text-black font-poppins font-medium mb-5">
             Sign up to my newsletter to be the first to know about podcast
-            updates, and if I ever feel like speaking to you... lmao.
+            episode updates, and if I ever feel like speaking to you…lmao.
           </p>
           <NewsletterInput />
         </div>

@@ -62,7 +62,6 @@ export default function NewsletterInput() {
           ...state,
           isLoading: false,
           message: {
-            email:"",
             message: "You're now subscribed! TTYS 🎉📱",
             color: "text-green-800",
           },
@@ -75,14 +74,12 @@ export default function NewsletterInput() {
           ...state,
           isLoading: false,
           message: {
-            email:"",
             message: "This email is aready subscribed 👎🏿",
             color: "text-red-800",
           },
         }));
       }
     } catch (e) {
-      console.log(e);
       setState((state) => ({
         ...state,
         isLoading: false,
@@ -92,6 +89,11 @@ export default function NewsletterInput() {
         },
       }));
     }
+
+    setState((state) => ({
+      ...state,
+      email: ""
+    }));
   };
 
   return (

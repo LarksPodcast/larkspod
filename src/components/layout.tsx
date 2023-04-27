@@ -61,12 +61,15 @@ export default function Layout({ children }: any) {
         title="Larks Podcast"
         description="LARKS is a podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels."
       />
+
       {router.pathname === "/" ? null : <Nav />}
+
       {podcastSeries !== undefined
         ? cloneElement(children, {
             podcastSeries: podcastSeries,
           })
         : children}
+
       {router.pathname === "/404" ? null : <Footer />}
     </Fragment>
   );

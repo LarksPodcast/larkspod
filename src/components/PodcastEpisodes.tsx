@@ -136,9 +136,9 @@ export default memo(function PodcastEpisodes({ episodes }: { episodes: any[] }) 
                           <MaterialIcon iconName="volume_up" onClick={(e) => player.handleAudioMute(e.target)} />
                       </div>
 
-                      <div className="volume-slider">
+                      {/* <div className="volume-slider">
                         <div className="volume-percentage"></div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

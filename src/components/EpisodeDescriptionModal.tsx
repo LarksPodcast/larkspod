@@ -61,33 +61,37 @@ export default memo(function EpisodeDescriptionModal({
             {episodeDetails?.map((DetailLine, lineIdx) => {
               const matchedLink = DetailLine.match(linkRegex);
 
+              if (matchedLink !== null) {
+
                 return (
                   <div key={lineIdx}>
                     <p key={lineIdx} className="font-poppins font-light">
-                      {!matchedLink?DetailLine:""}
-                      <Link
-                        href={matchedLink?matchedLink[0]:""}
+                      <a
+                        href={`https://${matchedLink[0]}`}
                         className="underline custom-text-color-primary"
                         target="_blank"
+                        rel="noopener"
                       >
-                        {matchedLink?matchedLink[0]:""}
-                      </Link>
+                        {matchedLink[0]}
+                      </a>
                     </p>
                     <br />
                   </div>
                 );
+              }
 
+              return (
+                <div key={lineIdx}>
+                  <p key={lineIdx} className="font-poppins font-light">
+                    {DetailLine}
+                  </p>
+                  <br />
+                </div>
+              );
             })}
           </div>
         </div>
       </div>
     </>
   );
-})
-
-/*
-    ISSUES
-    ------
-    - RegEx not matching all links (problem)
-    - RegEx should match all links and format them (solution)
-*/
+});

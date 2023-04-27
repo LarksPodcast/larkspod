@@ -30,7 +30,7 @@ export default function Episodes({ podcastSeries }: dataType) {
   };
 
   return (
-    <main id="larkspodcast-episodes" className="h-screen">
+    <main id="larkspodcast-episodes">
       <section id="larks-all-episodes" className="px-10 mb-10">
         <div
           id="episode-search"

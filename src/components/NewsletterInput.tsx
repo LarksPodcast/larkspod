@@ -22,7 +22,7 @@ export default function NewsletterInput() {
         ...state,
         isLoading: false,
         message: {
-          message: "Email field can not be empty!",
+          message: "Email field can not be empty 👎🏿",
           color: "text-red-800",
         },
       }));
@@ -36,7 +36,7 @@ export default function NewsletterInput() {
         ...state,
         isLoading: false,
         message: {
-          message: "Invalid email!",
+          message: "Invalid email 👎🏿",
           color: "text-red-800",
         },
       }));
@@ -44,11 +44,10 @@ export default function NewsletterInput() {
     }
 
     try {
-      const res = await fetch("https://api.getresponse.com/v3/contacts", {
+      const res = await fetch("/api/subscriber", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
-          "X-Auth-Token": `api-key ${process.env.NEXT_PUBLIC_LARKS_NEWSLETTER_API_KEY}`,
         },
         body: JSON.stringify({
           name: "Lark",
@@ -57,18 +56,33 @@ export default function NewsletterInput() {
         }),
       }).then((data) => data.json());
 
-      if (res.status === 200) {
+      // Email added to contact list.
+      if (res.status === 202) {
         setState((state) => ({
           ...state,
           isLoading: false,
           message: {
             email:"",
-            message: "Awesome! TTYS 🎉📱",
+            message: "You're now subscribed! TTYS 🎉📱",
             color: "text-green-800",
           },
         }));
       }
+
+      // Conflict with data. Possibly data already exist.
+      if (res.status === 409) {
+        setState((state) => ({
+          ...state,
+          isLoading: false,
+          message: {
+            email:"",
+            message: "This email is aready subscribed 👎🏿",
+            color: "text-red-800",
+          },
+        }));
+      }
     } catch (e) {
+      console.log(e);
       setState((state) => ({
         ...state,
         isLoading: false,

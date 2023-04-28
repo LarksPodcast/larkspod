@@ -61,6 +61,7 @@ export default function NewsletterInput() {
         setState((state) => ({
           ...state,
           isLoading: false,
+          email: "",
           message: {
             message: "You're now subscribed! TTYS 🎉📱",
             color: "text-green-800",
@@ -73,8 +74,21 @@ export default function NewsletterInput() {
         setState((state) => ({
           ...state,
           isLoading: false,
+          email: "",
           message: {
             message: "This email is aready subscribed 👎🏿",
+            color: "text-red-800",
+          },
+        }));
+      }
+
+      if (res.status === 500) {
+        setState((state) => ({
+          ...state,
+          isLoading: false,
+          email: "",
+          message: {
+            message: "There seem to be problem! Try again later ⏳",
             color: "text-red-800",
           },
         }));
@@ -83,17 +97,13 @@ export default function NewsletterInput() {
       setState((state) => ({
         ...state,
         isLoading: false,
+        email: "",
         message: {
           message: "Unable to send email!",
           color: "text-red-800",
         },
       }));
     }
-
-    setState((state) => ({
-      ...state,
-      email: ""
-    }));
   };
 
   return (

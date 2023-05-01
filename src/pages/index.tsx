@@ -1,23 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
+import InlineFrame from "@/components/inlineFrame";
+import Nav from "@/components/nav";
+import PodcastEpisodes from "@/components/PodcastEpisodes";
+import SEO from "@/components/SEO";
+import localFont from 'next/font/local';
 import Image from "next/image";
 import Link from "next/link";
 
-import SEO from "@/components/SEO";
-// import NewsletterInput from "@/components/NewsletterInput";
-import InlineFrame from "@/components/inlineFrame";
-import PodcastEpisodes from "@/components/PodcastEpisodes";
-import Nav from "@/components/nav";
-
+// Images
 import ellipse from "../assets/images/larks-ellipse.svg";
 import LarksOnApplePodcast from "../assets/images/larks-on-apple-podcast.png";
-import googlePodcast from "../assets/images/podcast-platforms/google-podcast.png";
 import amazon from "../assets/images/podcast-platforms/amazon.png";
 import applePodcast from "../assets/images/podcast-platforms/apple-podcast.png";
+import googlePodcast from "../assets/images/podcast-platforms/google-podcast.png";
 import iHeartRadio from "../assets/images/podcast-platforms/iHeartRadio.png";
-import spotify from "../assets/images/podcast-platforms/spotify.png";
 import rss from "../assets/images/podcast-platforms/rss.png";
+import spotify from "../assets/images/podcast-platforms/spotify.png";
+
+// Local hosted fonts
+import poppinsFont  from "@/poppins-fonts";
+const knewWaveFont = localFont({src: "../assets/fonts/knewave/Knewave-Regular.ttf"});
+const shadowInLightFont = localFont({src: "../assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf"});
+const yellowtailFont = localFont({src: "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf"})
 
 export default function Home({ podcastSeries }: any) {
+
   // Extract 4 episodes from all episodes
   const { episodes } = podcastSeries;
   const podcastEpisodes = episodes.slice(0, 1);
@@ -37,20 +44,20 @@ export default function Home({ podcastSeries }: any) {
               <div>
                 <h1
                   id="intro-header"
-                  className="text-9xl md:text-[10rem] lg:text-[13rem] font-shadowIntoLight"
+                  className={`text-9xl md:text-[10rem] lg:text-[13rem] ${shadowInLightFont.className}`}
                 >
                   LARKS
                 </h1>
                 <h2
                   id="sub-header"
-                  className="text-3xl sm:text-4xl font-knewWave custom-text-color-dark my-2"
+                  className={`text-3xl sm:text-4xl my-2 ${knewWaveFont.className} custom-text-color-dark`}
                 >
                   THE PODCAST
                 </h2>
               </div>
               <div id="larks-ellipse" className="flex flex-col items-center">
                 <Image src={ellipse} alt="An ellipse" />
-                <h3 className="font-yellowTail text-3xl sm:text-5xl">
+                <h3 className={`${yellowtailFont.className} text-3xl sm:text-5xl`}>
                   With Emmy.
                 </h3>
               </div>

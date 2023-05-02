@@ -1,3 +1,9 @@
-declare module '*.woff';
-declare module '*.woff2';
-declare module '*.ttf';
+declare module "*.ttf" {
+  const value: string;
+  export default value;
+}
+
+declare module "*.woff" {
+  const value: string;
+  export default value;
+}

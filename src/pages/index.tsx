@@ -18,7 +18,7 @@ import rss from "../assets/images/podcast-platforms/rss.png";
 import spotify from "../assets/images/podcast-platforms/spotify.png";
 
 // Local hosted fonts
-import poppinsFont  from "@/poppins-fonts";
+import {poppinsFont} from "@/poppins-fonts";
 const knewWaveFont = localFont({src: "../assets/fonts/knewave/Knewave-Regular.ttf"});
 const shadowInLightFont = localFont({src: "../assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf"});
 const yellowtailFont = localFont({src: "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf"})
@@ -33,7 +33,7 @@ export default function Home({ podcastSeries }: any) {
     <>
       <SEO title="Larks Podcast | Home" />
 
-      <main id="larkspodcast-home" className="h-auto sm:h-full">
+      <main id="larkspodcast-home" className={`h-auto sm:h-full`}>
         <section
           id="larkspodcast-banner"
           className="h-[30rem] md:h-[35rem] lg:[40rem]"
@@ -71,7 +71,7 @@ export default function Home({ podcastSeries }: any) {
           id="larks-latest-episodes"
           className="px-5 sm:px-10 mb-20 mt-10 sm:mt-20"
         >
-          <h2 className="font-poppins font-medium text-3xl pb-10 lg:ml-[20rem] custom-text-color-dark">
+          <h2 className="font-medium text-3xl pb-10 lg:ml-[20rem] custom-text-color-dark">
             Latest episode
           </h2>
 
@@ -80,7 +80,7 @@ export default function Home({ podcastSeries }: any) {
 
         <section id="larkspodcast-platforms" className="h-auto">
           <div id="podcasts-platforms" className="w-full px-5 sm:px-10">
-            <h3 className="font-poppins font-medium text-[1.5rem] md:text-3xl leading-tight sm:leading-relaxed custom-text-color-dark max-w-[35rem] mb-5 sm:mb-10">
+            <h3 className=" font-medium text-[1.5rem] md:text-3xl leading-tight sm:leading-relaxed custom-text-color-dark max-w-[35rem] mb-5 sm:mb-10">
               LARKS is available on all platforms.{" "}
               <span className="custom-text-color-primary">
                 Don't forget to subscribe!
@@ -168,7 +168,7 @@ export default function Home({ podcastSeries }: any) {
 
           {/* <section
             id="larkspodcast-newsletter"
-            className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] font-poppins"
+            className="px-5 sm:pl-20 sm:pr-10 custom-bg-color-secondary w-auto h-[30rem] "
           >
             <h3 className="custom-text-color-text-dark inline-block text-1xl sm:w-[30rem] text-[1.5rem] md:text-3xl font-medium leading-tight sm:leading-loose pt-20 pb-5 sm:pb-10">
               You've listend to the podcast?{" "}
@@ -204,7 +204,7 @@ export default function Home({ podcastSeries }: any) {
 
         <div
           id="youtube-platform"
-          className="w-full custom-bg-color-secondary h-[45rem] font-poppins"
+          className="w-full custom-bg-color-secondary h-[45rem] "
         >
           <div className="flex flex-col justify-center items-center h-full">
             <h3 className="text-xl sm:text-2xl font-medium text-white py-5">

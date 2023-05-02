@@ -24,7 +24,7 @@ export default function MaterialIcon({
           }`}
           onClick={onClick ? onClick : undefined}
         >
-          <Image src={iconObject} alt="gg" />
+          <Image src={iconObject} alt="Icon" priority />
         </span>
       </div>
     ); 

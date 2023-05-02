@@ -5,6 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import larkspodcastLogo from "../assets/images/larks-logo.svg";
+import homeIcon from "../assets/icons/home.svg";
+import micIcon from "../assets/icons/mic.svg";
+import addressIcon from "../assets/icons/alternate_email.svg";
 
 export default function Nav() {
   const [showNav, setShowNav] = React.useState(false);
@@ -41,17 +44,17 @@ export default function Nav() {
         >
           <li>
             <Link href="/" className="h-full block">
-              <MaterialIcon iconName="home" className="text-5xl" />
+              <MaterialIcon iconObject={homeIcon} className="text-5xl" />
             </Link>
           </li>
           <li>
             <Link href="/episodes" className="block h-full">
-              <MaterialIcon iconName="keyboard_voice" className="text-5xl" />
+              <MaterialIcon iconObject={micIcon} className="text-5xl" />
             </Link>
           </li>
           <li>
             <Link href="/contact" className="block h-full">
-              <MaterialIcon iconName="alternate_email" className="text-5xl" />
+              <MaterialIcon iconObject={addressIcon} className="text-5xl" />
             </Link>
           </li>
         </ul>

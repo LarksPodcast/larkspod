@@ -258,7 +258,7 @@ export default function Home({ podcastSeries }: any) {
               Catch the visuals on YouTube
             </h3>
             <InlineFrame
-              className="rounded-lg"
+              className="rounded-lg h-[200px] md:h-[500px]"
               url="https://www.youtube.com/embed/80TbyibmshY"
               name="youtube-inline-frame"
               title="Larks podcast YouTube visuals"

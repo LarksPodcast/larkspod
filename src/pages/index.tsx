@@ -3,7 +3,7 @@ import InlineFrame from "@/components/inlineFrame";
 import Nav from "@/components/nav";
 import PodcastEpisodes from "@/components/PodcastEpisodes";
 import SEO from "@/components/SEO";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,13 +18,18 @@ import rss from "../assets/images/podcast-platforms/rss.png";
 import spotify from "../assets/images/podcast-platforms/spotify.png";
 
 // Local hosted fonts
-import {poppinsFont} from "@/poppins-fonts";
-const knewWaveFont = localFont({src: "../assets/fonts/knewave/Knewave-Regular.ttf"});
-const shadowInLightFont = localFont({src: "../assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf"});
-const yellowtailFont = localFont({src: "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf"})
+import { poppinsFont } from "@/poppins-fonts";
+const knewWaveFont = localFont({
+  src: "../assets/fonts/knewave/Knewave-Regular.ttf",
+});
+const shadowInLightFont = localFont({
+  src: "../assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf",
+});
+const yellowtailFont = localFont({
+  src: "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf",
+});
 
 export default function Home({ podcastSeries }: any) {
-
   // Extract 4 episodes from all episodes
   const { episodes } = podcastSeries;
   const podcastEpisodes = episodes.slice(0, 1);
@@ -40,6 +45,7 @@ export default function Home({ podcastSeries }: any) {
         >
           <div id="larks-banner-top-stack">
             <Nav />
+
             <div className="flex flex-col sm:flex-row justify-center h-full px-5">
               <div>
                 <h1
@@ -57,14 +63,49 @@ export default function Home({ podcastSeries }: any) {
               </div>
               <div id="larks-ellipse" className="flex flex-col items-center">
                 <Image src={ellipse} alt="An ellipse" />
-                <h3 className={`${yellowtailFont.className} text-3xl sm:text-5xl`}>
+                <h3
+                  className={`${yellowtailFont.className} text-3xl sm:text-5xl`}
+                >
                   With Emmy.
                 </h3>
               </div>
               <h1 className="hidden">Larks the podcast with Emmy</h1>
             </div>
           </div>
+
           <div id="overlay"></div>
+        </section>
+
+        <section
+          id="larks-intro"
+          className="h-[25rem] px-5 sm:px-10 flex flex-col items-center justify-center"
+        >
+          <span className="custom-text-color-accent font-semibold text-4xl block">
+            YO WASSUP!
+          </span>
+          <span className="custom-text-color-dark text-xl block my-5">
+            Welcome to
+          </span>
+          <h1 className="custom-header-color font-bold text-6xl block">
+            Larks
+          </h1>
+          <span className="custom-header-color font-medium text-xl block my-5">
+            "The Religion"
+          </span>
+          <p className="custom-text-color-dark">
+            A hobby turned serious is now in its third season, Hosted by “the
+            syndicate”{" "}
+            <Link
+              href="https://instagram.com/_romeopeter"
+              className="font-medium underline"
+              target="_blank"
+            >
+              Emmy.
+            </Link>
+          </p>
+          {/* <button type="button">
+            <Link href="#">About</Link>
+          </button> */}
         </section>
 
         <section
@@ -83,7 +124,7 @@ export default function Home({ podcastSeries }: any) {
             <h3 className=" font-medium text-[1.5rem] md:text-3xl leading-tight sm:leading-relaxed custom-text-color-dark max-w-[35rem] mb-5 sm:mb-10">
               LARKS is available on all platforms.{" "}
               <span className="custom-text-color-primary">
-                Don't forget to subscribe!
+                Listen and subscribe!
               </span>
             </h3>
 
@@ -93,9 +134,14 @@ export default function Home({ podcastSeries }: any) {
             >
               <div
                 id="podcasts-platform-listing"
-                className="flex justify-center items-center sm:w-1/2"
+                className="flex flex-col items-center sm:w-1/2 h-auto"
               >
-                <div className="flex justify-start lg:justify-end flex-wrap lg:mt-[-7rem]">
+               <div id="podcast-release">
+                 <h3 className="custom-text-color-dark text-xl font-semibold">Episodes are released bi-weekly</h3>
+                 <p className="custom-text-color-dark font-medium my-5">Listen to the ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.</p>
+               </div>
+
+                <div className="flex justify-start lg:justify-end flex-wrap">
                   <a
                     href="https://podcasts.apple.com/ng/podcast/larks/id1575332695"
                     className="platform-listing rounded-full"
@@ -152,6 +198,7 @@ export default function Home({ podcastSeries }: any) {
                   </a>
                 </div>
               </div>
+
               <div
                 id="larks-on-apple-platform"
                 className="hidden sm:block w-1/2"

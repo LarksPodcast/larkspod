@@ -20,13 +20,13 @@ import spotify from "../assets/images/podcast-platforms/spotify.png";
 // Local hosted fonts
 import { poppinsFont } from "@/poppins-fonts";
 const knewWaveFont = localFont({
-  src: "../assets/fonts/knewave/Knewave-Regular.ttf",
+  src: "../assets/fonts/knewave/knewave-regular.ttf",
 });
 const shadowInLightFont = localFont({
-  src: "../assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf",
+  src: "../assets/fonts/shadows-into-light/shadows-into-light-regular.ttf",
 });
 const yellowtailFont = localFont({
-  src: "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf",
+  src: "../assets/fonts/yellowtail/yellowtail-regular.ttf",
 });
 
 export default function Home({ podcastSeries }: any) {

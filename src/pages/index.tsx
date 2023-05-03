@@ -205,7 +205,7 @@ export default function Home({ podcastSeries }: any) {
               >
                 <Image
                   src={LarksOnApplePodcast}
-                  alt="Larks on Apple podcast"
+                  alt="Apple podcast"
                   className="w-[20rem] md:ml-[3rem] lg:ml-[10rem]"
                   priority
                 />

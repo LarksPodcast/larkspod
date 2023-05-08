@@ -37,7 +37,10 @@ export default function Layout({ children }: any) {
   if (error) {
     return (
       <main className="h-screen">
-        <SEO title="Larks Podcast | Error" />
+        <SEO
+          title="Larks Podcast | Error"
+          description="LARKS podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels."
+        />
         <div
           id="network-error-prompt"
           className="h-full flex justify-center mt-[25rem] p"
@@ -59,7 +62,7 @@ export default function Layout({ children }: any) {
     <Fragment>
       <SEO
         title="Larks Podcast"
-        description="LARKS is a podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels."
+        description="LARKS podcast that defies the norms of being specific, straightforward and concise; It embraces the ridiculous, the silly and the superficial and It’s more about the laffs than the feels."
       />
 
       {router.pathname === "/" ? null : <Nav />}

@@ -86,7 +86,7 @@ export default function Home({ podcastSeries }: any) {
           <span className="custom-text-color-dark text-xl block my-5">
             Welcome to
           </span>
-          <h1 className="custom-header-color font-bold text-6xl block">
+          <h1 className={`custom-header-color font-bold text-6xl block ${shadowInLightFont.className}`}>
             Larks
           </h1>
           <span className="custom-header-color font-medium text-xl block my-5">
@@ -96,7 +96,7 @@ export default function Home({ podcastSeries }: any) {
             A hobby turned serious is now in its third season, Hosted by “the
             syndicate”{" "}
             <Link
-              href="https://instagram.com/_romeopeter"
+              href="www.twitter.com/EmaazDr"
               className="font-medium underline"
               target="_blank"
             >
@@ -251,7 +251,7 @@ export default function Home({ podcastSeries }: any) {
 
         <div
           id="youtube-platform"
-          className="w-full custom-bg-color-secondary h-[45rem] "
+          className="w-full custom-bg-color-secondary h-[30rem] sm:h-[45rem] "
         >
           <div className="flex flex-col justify-center items-center h-full">
             <h3 className="text-xl sm:text-2xl font-medium text-white py-5">
@@ -270,7 +270,7 @@ export default function Home({ podcastSeries }: any) {
             />
             <div
               id="subscribe-button"
-              className="w-[18rem] h-[55px] text-center py-5 mt-7 rounded-full text-white"
+              className="w-[15rem] h-[50px] sm:w-[18rem] sm:h-[55px] text-center py-5 mt-7 rounded-full text-white"
             >
               <a
                 href="https://www.youtube.com/@larkspodcast"

@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
+import SEO from "@/components/SEO";
 
 export default function Contact() {
   return (
+    <>
+    <SEO title="Larks Podcast| Contact"/>
     <main className="h-[30rem] sm:h-[40rem]">
       <section className="flex flex-col items-center md:items-start mt-40 md:pl-[5rem] lg:pl-0 lg:items-center lg:ml-0 h-full w-full">
         <h1 className="text text-3xl sm:text-5xl font-regular custom-text-color-primary">
@@ -43,5 +46,6 @@ export default function Contact() {
         </div>
       </section>
     </main>
+    </>
   );
 }

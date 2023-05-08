@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PodcastEpisodes from "@/components/PodcastEpisodes";
+import SEO from "@/components/SEO";
 
 type dataType = {
   data: any;
@@ -30,7 +31,10 @@ export default function Episodes({ podcastSeries }: dataType) {
   };
 
   return (
+    <>
+    <SEO title="Larks Podcast| Episodes" />
     <main id="larkspodcast-episodes">
+
       <section id="larks-all-episodes" className="px-10 mb-10">
         <div
           id="episode-search"
@@ -56,5 +60,6 @@ export default function Episodes({ podcastSeries }: dataType) {
         </div>
       </section>
     </main>
+    </>
   );
 }

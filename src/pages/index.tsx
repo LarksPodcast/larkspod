@@ -96,7 +96,7 @@ export default function Home({ podcastSeries }: any) {
             A hobby turned serious is now in its third season, Hosted by “the
             syndicate”{" "}
             <Link
-              href="www.twitter.com/EmaazDr"
+              href="https://www.twitter.com/EmaazDr"
               className="font-medium underline"
               target="_blank"
             >

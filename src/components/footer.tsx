@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
         <div className="footer-newsletter w-full sm:w-[30rem]">
           <h4 className="text-[1.2rem] md:text-2xl lg:text-3xl font-bold py-5 text-white">
-            Do you classify as a Gen Z?
+            Do you enjoy listening to random banter?
           </h4>
           <p className="text-black font-poppins font-medium mb-5">
             Sign up to my newsletter to be the first to know about podcast

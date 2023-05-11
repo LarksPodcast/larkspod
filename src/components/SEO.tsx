@@ -16,6 +16,8 @@ export default function SEO({ title, description, children }: SEOType) {
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={description || websiteDescription} />
+      <meta name="author" content="Duowork Software Company | Romeo Agbor Peter" />
+      <meta name="keywords" content="Culture-podcast, Abuja-podcaster, Emmy, larks, larkspdocast" />
 
       {/* OG for facebook */}
       <meta property="og:type" content="website" />

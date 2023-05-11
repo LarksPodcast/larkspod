@@ -41,12 +41,12 @@ export default function Home({ podcastSeries }: any) {
       <main id="larkspodcast-home" className={`h-auto sm:h-full`}>
         <section
           id="larkspodcast-banner"
-          className="h-[30rem] md:h-[35rem] lg:[40rem]"
+          className="h-[40rem] md:h-screen lg:[40rem]"
         >
           <div id="larks-banner-top-stack">
             <Nav />
 
-            <div className="flex flex-col sm:flex-row justify-center h-full px-5">
+            {/* <div className="flex flex-col sm:flex-row justify-center h-full px-5">
               <div>
                 <h1
                   id="intro-header"
@@ -70,7 +70,7 @@ export default function Home({ podcastSeries }: any) {
                 </h3>
               </div>
               <h1 className="hidden">Larks the podcast with Emmy</h1>
-            </div>
+            </div> */}
           </div>
 
           <div id="overlay"></div>
@@ -249,7 +249,7 @@ export default function Home({ podcastSeries }: any) {
           />
         </section> */}
 
-        <div
+        {/* <div
           id="youtube-platform"
           className="w-full custom-bg-color-secondary h-[30rem] sm:h-[45rem] "
         >
@@ -292,7 +292,7 @@ export default function Home({ podcastSeries }: any) {
               </Link>
             </p>
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );

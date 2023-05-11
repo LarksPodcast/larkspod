@@ -2,9 +2,11 @@
   #larkspodcast-banner {
     position: relative;
     background-color: white;
+    background-image: url("/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    // background-position: center;
+    background-position-y: 10%;
 
     #larks-banner-top-stack {
 
@@ -55,8 +57,15 @@
       top: 0;
       width: 100%;
       height: 100%;
-      // background-color: rgba($primary-color, 0.4);
+      background-color: rgba($primary-color, 0.1);
     }
+  }
+
+  @media screen and (max-width: 768px) {
+   #larkspodcast-banner {
+    background-size: contain !important;
+    background-position: center;
+   }
   }
 
   #larkspodcast-platforms {

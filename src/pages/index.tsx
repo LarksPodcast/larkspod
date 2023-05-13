@@ -6,6 +6,8 @@ import SEO from "@/components/SEO";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
+import { parseString } from "xml2js";
+import { inspect } from "util";
 
 // Images
 import ellipse from "../assets/images/larks-ellipse.svg";
@@ -19,6 +21,7 @@ import spotify from "../assets/images/podcast-platforms/spotify.png";
 
 // Local hosted fonts
 import { poppinsFont } from "@/poppins-fonts";
+import { responsePathAsArray } from "graphql";
 const knewWaveFont = localFont({
   src: "../assets/fonts/knewave/knewave-regular.ttf",
 });
@@ -29,10 +32,69 @@ const yellowtailFont = localFont({
   src: "../assets/fonts/yellowtail/yellowtail-regular.ttf",
 });
 
-export default function Home({ podcastSeries }: any) {
-  // Extract 4 episodes from all episodes
-  const { episodes } = podcastSeries;
-  const podcastEpisodes = episodes.slice(0, 1);
+const loadLatestPodcast = async () => {
+  const res = await fetch("https://anchor.fm/s/37d339e8/podcast/rss");
+  let data;
+
+  if (!res) {
+    console.log(res);
+    return {
+      status: 500,
+      message: "Server error",
+    };
+  }
+
+  const xmlString = await res.text();
+
+  parseString(xmlString, (error, result) => {
+    if (error) {
+      console.log(error);
+
+      return error;
+    }
+
+    const podcastEpisodes = result.rss.channel[0].item[0];
+    const datePublished = new Date(podcastEpisodes.pubDate[0]).getTime();
+
+    data = JSON.stringify([
+      {
+        audioUrl: podcastEpisodes.enclosure[0].$.url,
+        datePublished: datePublished / 1000,
+        description: podcastEpisodes.description[0],
+        imageUrl: podcastEpisodes["itunes:image"][0].$.href,
+        name: podcastEpisodes.title[0],
+        uuid: podcastEpisodes.guid[0]["_"],
+      },
+    ]);
+  });
+
+  return data;
+};
+
+export async function getStaticProps() {
+  let latestPodcast = await loadLatestPodcast();
+
+  return { props: { latestPodcast } };
+}
+
+export default function Home({ podcastSeries, latestPodcast }: any) {
+  const podcastEpisodes = JSON.parse(latestPodcast);
+
+  if (latestPodcast.status === 500) {
+    return (
+      <main className="h-screen">
+        <div
+          id="network-error-prompt"
+          className="h-full flex justify-center mt-[25rem] p"
+        >
+          <p className="custom-text-color-primary text-2xl sm:text-3xl mx-10 md:mx-20 lg:mx-[15rem] text-center leading-tight">
+            Something went wrong. It's not you, it's us!
+            Please again later.
+          </p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <>
@@ -86,7 +148,9 @@ export default function Home({ podcastSeries }: any) {
           <span className="custom-text-color-dark text-xl block my-5">
             Welcome to
           </span>
-          <h1 className={`custom-header-color font-bold text-6xl block ${shadowInLightFont.className}`}>
+          <h1
+            className={`custom-header-color font-bold text-6xl block ${shadowInLightFont.className}`}
+          >
             Larks
           </h1>
           <span className="custom-header-color font-medium text-xl block my-5">
@@ -136,10 +200,16 @@ export default function Home({ podcastSeries }: any) {
                 id="podcasts-platform-listing"
                 className="flex flex-col items-center sm:w-1/2 h-auto"
               >
-               <div id="podcast-release">
-                 <h3 className="custom-text-color-dark text-xl font-semibold">Episodes are released bi-weekly</h3>
-                 <p className="custom-text-color-dark font-medium my-5">Listen to the ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.</p>
-               </div>
+                <div id="podcast-release">
+                  <h3 className="custom-text-color-dark text-xl font-semibold">
+                    Episodes are released bi-weekly
+                  </h3>
+                  <p className="custom-text-color-dark font-medium my-5">
+                    Listen to the ridiculous, silly and apologetically
+                    superficial podcast that is more about the laughs than the
+                    feels.
+                  </p>
+                </div>
 
                 <div className="flex justify-start lg:justify-end flex-wrap">
                   <a
@@ -193,7 +263,7 @@ export default function Home({ podcastSeries }: any) {
                     target="_blank"
                     rel="noopener"
                   >
-                    <Image src={rss} alt="Amazon music" />
+                    <Image src={rss} alt="RSS reader" />
                     <span>RSS</span>
                   </a>
                 </div>
@@ -230,24 +300,6 @@ export default function Home({ podcastSeries }: any) {
             </div>
           </section> */}
         </section>
-
-        {/* <section id="larkspodcast-meet-host">
-          <div className="podcast-intro">
-            <h3>Meet the syndicate... Emmy.</h3>
-            <p>
-              Hey Guys, I’m Emmy. LARKS is a podcast that defies the norms of
-              being specific, straightforward and concise; It embraces the
-              ridiculous, the silly and the superficial and It’s more about the
-              LAFFS than the FEELS.
-            </p>
-          </div>
-
-          <Image
-            src={hostImage}
-            alt="Emmy; host of the Larks podcast"
-            id="podcast-host-image"
-          />
-        </section> */}
 
         {/* <div
           id="youtube-platform"

@@ -41,7 +41,7 @@ export default function Contact() {
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2"
             target="_blank"
           >
-            larkspodcast@gmail.com
+            contact@larkspodcast.com
           </Link>
         </div>
       </section>

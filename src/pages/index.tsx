@@ -71,7 +71,7 @@ const loadLatestPodcast = async () => {
   return data;
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let latestPodcast = await loadLatestPodcast();
 
   return { props: { latestPodcast } };

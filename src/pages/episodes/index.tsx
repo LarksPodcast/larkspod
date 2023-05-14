@@ -32,7 +32,7 @@ export default function Episodes({ podcastSeries }: dataType) {
 
   return (
     <>
-    <SEO title="Larks Podcast| Episodes" />
+    <SEO title="Larks Podcast | Episodes" />
     <main id="larkspodcast-episodes">
 
       <section id="larks-all-episodes" className="px-10 mb-10">

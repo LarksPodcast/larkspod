@@ -50,7 +50,7 @@ export default function Footer() {
                 <Image src={Youtube} alt="YouTube contact" className="w-full" />
               </Link>
               <Link
-                href="mailto:larkspodcast@gmail.com"
+                href="mailto:contact@larkspodcast.com"
                 className="social-contact-link"
                 title="Send us an email"
                 target="_blank"

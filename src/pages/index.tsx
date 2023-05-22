@@ -205,7 +205,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
                     Episodes are released bi-weekly
                   </h3>
                   <p className="custom-text-color-dark font-medium my-5">
-                    Listen to the ridiculous, silly and apologetically
+                    Listen to the ridiculous, silly and unapologetically
                     superficial podcast that is more about the laughs than the
                     feels.
                   </p>

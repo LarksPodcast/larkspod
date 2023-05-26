@@ -9,7 +9,6 @@ type SEOType = {
 };
 
 export default function SEO({ title, description, children }: SEOType) {
-  console.log(banner);
 
   const websiteDescription = `The ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.`;
 

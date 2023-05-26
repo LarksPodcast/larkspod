@@ -174,7 +174,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
 
         <section
           id="larks-latest-episodes"
-          className="px-5 sm:px-10 mb-20 mt-10 sm:mt-20"
+          className="px-5 sm:px-10 mb-20 mt-5 sm:mt-10"
         >
           <h2 className="font-medium text-3xl pb-10 lg:ml-[20rem] custom-text-color-dark">
             Latest episode

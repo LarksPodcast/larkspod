@@ -12,9 +12,7 @@ type SEOType = {
 
 export default function SEO({ title, description, children }: SEOType) {
 
-  const optimisedImag = (props: any) => {
-    return <Image {...props} style={{width: 300, height: 300}} alt="" />
-  }
+  const optimisedImag = `https://res.cloudinary.com/dqo24mfqf/image/upload/v1685182938/larks/banner_ldmaf3.png`;
 
   const websiteDescription = `The ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.`;
 
@@ -33,7 +31,7 @@ export default function SEO({ title, description, children }: SEOType) {
       <meta property="og:title" content="Larks podcast" />
       <meta property="og:site_name" content="Larks podcast" />
       <meta property="og:description" content={websiteDescription} />
-      <meta property="og:image" content={banner.src} />
+      <meta property="og:image" content={optimisedImag} />
       <meta property="og:image:alt" content="Larks podcast banner" />
 
       {/* Twitter */}
@@ -42,7 +40,7 @@ export default function SEO({ title, description, children }: SEOType) {
       <meta name="twitter:description" content={websiteDescription} />
       <meta name="twitter:site" content="@larkspod" />
       <meta name="twitter:url" content="https://larkspdocast.com" />
-      <meta name="twitter:image" content={banner.src} />
+      <meta name="twitter:image" content={optimisedImag} />
       <meta name="twitter:image:alt" content="Larks podcast banner" />
 
       {children}

@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import banner from "../assets/images/banner.png"
+import Image from "next/image";
+// import { toDataURL } from 'next/dist/next-server/lib/image-utils';
+import banner from "../assets/images/favicon.png"
 
 type SEOType = {
   title: string;
@@ -9,6 +11,10 @@ type SEOType = {
 };
 
 export default function SEO({ title, description, children }: SEOType) {
+
+  const optimisedImag = (props: any) => {
+    return <Image {...props} style={{width: 300, height: 300}} alt="" />
+  }
 
   const websiteDescription = `The ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.`;
 

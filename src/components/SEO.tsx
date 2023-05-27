@@ -12,7 +12,7 @@ type SEOType = {
 
 export default function SEO({ title, description, children }: SEOType) {
 
-  const optimisedImag = `https://res.cloudinary.com/dqo24mfqf/image/upload/v1685182938/larks/banner_ldmaf3.png`;
+  const optimisedImag = `https://res.cloudinary.com/dqo24mfqf/image/upload/t_Thumbnail/v1685182938/larks/banner_ldmaf3.png`;
 
   const websiteDescription = `The ridiculous, silly and apologetically superficial podcast that is more about the laughs than the feels.`;
 

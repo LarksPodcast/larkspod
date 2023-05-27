@@ -37,7 +37,7 @@ export default function SEO({ title, description, children }: SEOType) {
       <meta property="og:image:alt" content="Larks podcast banner" />
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content="Larks podcast" />
       <meta name="twitter:description" content={websiteDescription} />
       <meta name="twitter:site" content="@larkspod" />

@@ -141,7 +141,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
 
         <section
           id="larks-intro"
-          className="h-[25rem] px-5 sm:px-10 flex flex-col items-center justify-center"
+          className="h-[25rem] md:!h-[27.5rem] px-5 sm:px-10 flex flex-col items-center justify-center md:justify-start md:mt-40"
         >
           <span className="custom-text-color-accent font-semibold text-4xl block">
             YO WASSUP!
@@ -301,7 +301,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
           </section> */}
         </section>
 
-        {/* <div
+        <div
           id="youtube-platform"
           className="w-full custom-bg-color-secondary h-[30rem] sm:h-[45rem] "
         >
@@ -333,7 +333,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
                 Subscribe to the channel
               </a>
             </div>
-            <p className="text-xs mt-10 mb-2 text-white">
+            {/* <p className="text-xs mt-10 mb-2 text-white">
               Production by{" "}
               <Link
                 href="https://mswitchglobal.com"
@@ -342,9 +342,9 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
               >
                 MSwitchMedia
               </Link>
-            </p>
+            </p> */}
           </div>
-        </div> */}
+        </div>
       </main>
     </>
   );

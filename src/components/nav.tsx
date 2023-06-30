@@ -36,7 +36,7 @@ export default function Nav() {
         </Link>
       </div>
 
-      <nav className="p-5">
+      <nav>
         <ul
           className={`${
             showNav ? "!hidden" : "flex"

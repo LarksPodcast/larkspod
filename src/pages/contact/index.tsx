@@ -12,7 +12,7 @@ export default function Contact() {
           Contact <span className="font-semibold">LARKS.</span>
         </h1>
         <p className="text-xl my-5 text-center md:text-left lg:text-center">
-          We're open to partnership and sponsorship.
+          I am open to partnership and sponsorship.
         </p>
         <div className="flex justify-center md:justify-start lg:justify-evenly flex-wrap w-[350px] sm:w-[500px]">
           <Link
@@ -37,7 +37,7 @@ export default function Contact() {
             Instagram
           </Link>
           <Link
-            href="larkspodcast@gmail.com"
+            href="mailto:larkspodcast@gmail.com"
             className="border border-orange-400 rounded-lg custom-text-color-primary mt-5 font-semibold px-5 py-2"
             target="_blank"
           >

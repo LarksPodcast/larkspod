@@ -89,7 +89,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
         >
           <p className="custom-text-color-primary text-2xl sm:text-3xl mx-10 md:mx-20 lg:mx-[15rem] text-center leading-tight">
             Something went wrong. It's not you, it's us!
-            Please again later.
+            Please try again later.
           </p>
         </div>
       </main>
@@ -98,27 +98,28 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
 
   return (
     <>
-      <SEO title="Larks Podcast | Home" />
+      <SEO title="Larks Podcast" />
 
       <main id="larkspodcast-home" className={`h-auto sm:h-full`}>
-        <section
+        <Nav />
+        {/* <section
           id="larkspodcast-banner"
           className="h-[40rem] md:h-screen lg:[40rem]"
         >
           <div id="larks-banner-top-stack">
-            <Nav />
+           
 
-            {/* <div className="flex flex-col sm:flex-row justify-center h-full px-5">
+            <div className="flex flex-col sm:flex-row justify-center h-full px-5">
               <div>
                 <h1
                   id="intro-header"
-                  className={`text-9xl md:text-[10rem] lg:text-[13rem] ${shadowInLightFont.className}`}
+                  className={`text-9xl md:text-[10rem] lg:text-[13rem] ${shadowInLightFont.className} text-white`}
                 >
                   LARKS
                 </h1>
                 <h2
                   id="sub-header"
-                  className={`text-3xl sm:text-4xl my-2 ${knewWaveFont.className} custom-text-color-dark`}
+                  className={`text-3xl sm:text-4xl my-2 ${knewWaveFont.className} text-white`}
                 >
                   THE PODCAST
                 </h2>
@@ -132,11 +133,11 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
                 </h3>
               </div>
               <h1 className="hidden">Larks the podcast with Emmy</h1>
-            </div> */}
+            </div>
           </div>
 
           <div id="overlay"></div>
-        </section>
+        </section> */}
 
         <section
           id="larks-intro"
@@ -160,7 +161,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
             A hobby turned serious is now in its third season, Hosted by “the
             syndicate”{" "}
             <Link
-              href="https://www.twitter.com/EmaazDr"
+              href="http://instagram.com/officialemmydrake"
               className="font-medium underline"
               target="_blank"
             >
@@ -205,9 +206,8 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
                     Episodes are released bi-weekly
                   </h3>
                   <p className="custom-text-color-dark font-medium my-5">
-                    Listen to the ridiculous, silly and unapologetically
-                    superficial podcast that is more about the laughs than the
-                    feels.
+                  LARKS is a ridiculous, silly and unapologetically superficial podcast 
+                  that is more about the laffs than the feels.
                   </p>
                 </div>
 

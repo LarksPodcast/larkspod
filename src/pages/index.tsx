@@ -301,7 +301,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
           </section> */}
         </section>
 
-        {/* <div
+        <div
           id="youtube-platform"
           className="w-full custom-bg-color-secondary h-[30rem] sm:h-[45rem] "
         >
@@ -311,7 +311,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
             </h3>
             <InlineFrame
               className="rounded-lg h-[200px] md:h-[500px]"
-              url="https://youtube.com/shorts/wcA1K-owcfI"
+              url="https://www.youtube.com/embed/MI0ViUIx9F0"
               name="youtube-inline-frame"
               title="Larks podcast YouTube visuals"
               width="560"
@@ -333,7 +333,7 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
                 Subscribe to the channel
               </a>
             </div>
-            <p className="text-xs mt-10 mb-2 text-white">
+            {/* <p className="text-xs mt-10 mb-2 text-white">
               Production by{" "}
               <Link
                 href="https://mswitchglobal.com"
@@ -342,9 +342,9 @@ export default function Home({ podcastSeries, latestPodcast }: any) {
               >
                 MSwitchMedia
               </Link>
-            </p>
+            </p> */}
           </div>
-        </div> */}
+        </div>
       </main>
     </>
   );

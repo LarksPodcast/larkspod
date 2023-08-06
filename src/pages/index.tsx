@@ -7,7 +7,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 import { parseString } from "xml2js";
-import { inspect } from "util";
+import useSWR from "swr"
 
 // Images
 import ellipse from "../assets/images/larks-ellipse.svg";
@@ -32,19 +32,12 @@ const yellowtailFont = localFont({
   src: "../assets/fonts/yellowtail/yellowtail-regular.ttf",
 });
 
-const loadLatestPodcast = async () => {
-  const res = await fetch("https://anchor.fm/s/37d339e8/podcast/rss");
-  let data;
+const parseXMLStringAsJSON = (xmlString: string): string => {
+  let data = "";
 
-  if (!res) {
-    console.log(res);
-    return {
-      status: 500,
-      message: "Server error",
-    };
+  if (xmlString === undefined) {
+    data = xmlString
   }
-
-  const xmlString = await res.text();
 
   parseString(xmlString, (error, result) => {
     if (error) {
@@ -71,16 +64,13 @@ const loadLatestPodcast = async () => {
   return data;
 };
 
-export async function getServerSideProps() {
-  let latestPodcast = await loadLatestPodcast();
-
-  return { props: { latestPodcast } };
-}
+const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then((res) => res.text());
 
 export default function Home({ podcastSeries, latestPodcast }: any) {
-  const podcastEpisodes = JSON.parse(latestPodcast);
+  const { data, error } = useSWR('https://anchor.fm/s/37d339e8/podcast/rss', fetcher);
+  const podcastEpisodes = data !== undefined && JSON.parse(parseXMLStringAsJSON(data));
 
-  if (latestPodcast.status === 500) {
+  if (error || !data) {
     return (
       <main className="h-screen">
         <div

@@ -9,7 +9,7 @@ type dataType = {
 
 export default function Episodes({ podcastSeries }: dataType) {
   const [podcastEpisodes, setPodcastEpisodes] = useState([
-    ...podcastSeries.episodes,
+    ...podcastSeries?.episodes || [],
   ]);
 
   const handleChange = (e: any) => {

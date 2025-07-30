@@ -3,7 +3,7 @@ import { GraphQLClient, gql } from "graphql-request";
 // Get podcast series
 const getPodcastSeries = gql`
   {
-    getPodcastSeries(name: "officialemmydrake") {
+    getPodcastSeries(name: "Larks") {
       uuid
       name
       description

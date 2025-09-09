@@ -35,7 +35,7 @@ const getPodcastSeries = gql`
 // Get podcast
 const getPodcastEpisodes = gql`
   {
-    getPodcastEpisode(uuid: "${process.env.NEXT_PUBLIC_PODCAST_EPISODE_ID}") {
+    {
         uuid
         hash
         name
@@ -68,8 +68,6 @@ const graphQLRequest = async (query) => {
   const requestHeaders = {
     headers: {
       "Content-Type": "application/json",
-      "X-USER-ID": `${process.env.NEXT_PUBLIC_TADDY_USER_ID}`,
-      "X-API-KEY": `${process.env.NEXT_PUBLIC_TADDY_API_KEY}`,
     },
   };
 
